@@ -1,7 +1,6 @@
 import os
 import pickle
 from flask  import Flask,request,jsonify
-from preprocess import clean_text
 
 with open("models/naive-bayes_model.pkl","rb") as f:
     model = pickle.load(f)
@@ -26,9 +25,9 @@ def home():
 @app.route('/predict_form', methods=['POST'])
 def predict_form():
     message = request.form.get('message', '')
-    cleaned = clean_text(message)
-    prediction = model.predict([cleaned])[0]
-    probability = model.predict_proba([cleaned])[0]
+    # cleaned = clean_text(message)
+    prediction = model.predict([message])[0]
+    probability = model.predict_proba([message])[0]
     spam_prob = probability[1] * 100
     
     result_html = f'''
@@ -49,9 +48,9 @@ def predict_form():
 def predict():
     data = request.get_json(force=True)
     message = data.get('message','')
-    cleaned = clean_text(message)
-    prediction = model.predict([cleaned])[0]
-    probability = model.predict_proba([cleaned])[0]
+    # cleaned = clean_text(message)
+    prediction = model.predict([message])[0]
+    probability = model.predict_proba([message])[0]
     return jsonify({
         'message': message,
         'prediction': prediction,
