@@ -1,7 +1,7 @@
 import os
 import pickle
 from flask  import Flask,request,jsonify
-from src.preprocess import clean_text
+from preprocess import clean_text
 
 with open("models/naive-bayes_model.pkl","rb") as f:
     model = pickle.load(f)
