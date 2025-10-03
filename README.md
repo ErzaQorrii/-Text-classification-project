@@ -34,8 +34,8 @@ Below is an example of the most common words in spam and ham messages and in the
 ![img_8.png](imgs/img_8.png)<br>
 ![img_6.png](imgs/img_6.png)<br><br>
 **Naive Bayes**:<br>
-- ![img_7.png](imgs/img_7.png)<br>
-- ![img_9.png](imgs/img_9.png)
+![img_7.png](imgs/img_7.png)<br>
+![img_9.png](imgs/img_9.png)
 
  ### Prediction Interface
  - Command-line prediction script
