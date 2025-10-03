@@ -1,4 +1,5 @@
 # -Text-classification-project
+ ### Test the project here https://text-classification-project-ppm4.onrender.com/
 
  ### Overview 
 This project implements a text classification system to detect spam messages using machine learning. It demonstrates end-to-end ML pipeline from data preprocessing to model deployment with a web interface.
@@ -47,46 +48,46 @@ Below is an example of the most common words in spam and ham messages and in the
 
  1. Clone the repository: https://github.com/ErzaQorrii/-Text-classification-project.git
 ```bash
-         git clone https://github.com/ErzaQorrii/-Text-classification-project.git
-         cd text-classification-project
+git clone https://github.com/ErzaQorrii/-Text-classification-project.git
+cd text-classification-project
 ```     
  2. Create and activate a virtual environment (optional but recommended):
 ```bash
-         python -m venv venv
-         source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+python -m venv venv
+source venv/bin/activate  # On Windows use `venv\Scripts\activate`
 ```
  3. Install required packages:
 ```bash
-         pip install -r requirements.txt
+pip install -r requirements.txt
 ```
  4. Download NLTK data:
   ```bash
-           python nltk_setup.py
+  python nltk_setup.py
    ```
 ### Usage
 1. **Activate virtual environment:**
 source venv/bin/activate<br>
 1. **Preprocess data:**
   ```bash
-     cd src
-     python preprocess.py
+ cd src
+ python preprocess.py
   ```
   2.**Run exploratory analysis:**<br>
   ```bash
-     cd src
-    python exploratoryAnalysis.py  
+cd src
+python exploratoryAnalysis.py  
 ```
   3. **Train models**:
 ```bash
-   python train_models.py
+ python train_models.py
 ```
   4. **Make predictions**(CLI):
   ```bash
-     python predict.py
+ python predict.py
   ```
 
   5. **Run web app**:
   ```bash
-     python app.py
+ python app.py
    ```
   5. **Visit http://localhost:5000**:
