@@ -1,11 +1,9 @@
 from nltk import word_tokenize
-
-
 import preprocess
 from collections import Counter
 
 
-def mostFrequentWords(dataSet,n=20):
+def mostFrequentWords(dataSet,n=5):
     all_words = []
     for word in dataSet:
         if ' ' in word:
@@ -15,12 +13,12 @@ def mostFrequentWords(dataSet,n=20):
         all_words.extend([w for w in  words if w.isalnum()])
     return  (Counter(all_words).most_common(n))
 
-def mostFrequentWordsInSpam(dataSet,n=20):
+def mostFrequentWordsInSpam(dataSet,n=5):
     spamwords = dataSet[dataSet[0]=='spam']['cleaned']
     return (mostFrequentWords(spamwords,n))
 
 
-def mostFrequentWordsInHam(dataSet,n=20):
+def mostFrequentWordsInHam(dataSet,n=5):
     hamwords = dataSet[dataSet[0]=='ham']['cleaned']
     return (mostFrequentWords(hamwords,n))
 

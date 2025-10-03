@@ -7,7 +7,7 @@ nltk.download('punkt_tab')
 
 readDataSet = pd.read_csv("../dataset/sms+spam+collection/SMSSpamCollection", sep='\t', header=None)
 print("\n========== Original Dataset Sample ==========")
-print(readDataSet.head(10))
+print(readDataSet.head(5))
 print("=" * 45)
 
 
@@ -39,5 +39,5 @@ def clean_text(text):
 
 readDataSet['cleaned']= readDataSet[1].apply(clean_text)
 print('Data after cleaning')
-print(readDataSet.head(10))
+print(readDataSet.head(5))
 
