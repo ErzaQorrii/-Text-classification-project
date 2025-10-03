@@ -2,14 +2,6 @@ import string
 import pandas as pd
 from nltk.corpus import stopwords
 import nltk
-nltk.download('punkt_tab')
-
-
-readDataSet = pd.read_csv("../dataset/sms+spam+collection/SMSSpamCollection", sep='\t', header=None)
-print("\n========== Original Dataset Sample ==========")
-print(readDataSet.head(5))
-print("=" * 45)
-
 
 def remove_stopwords(text):
     stop_words = set(stopwords.words('english'))
@@ -36,8 +28,13 @@ def clean_text(text):
      text = remove_stopwords(text)
      return text
 
-
-readDataSet['cleaned']= readDataSet[1].apply(clean_text)
-print('Data after cleaning')
-print(readDataSet.head(5))
+if __name__ == "__main__":
+    nltk.download('punkt_tab')
+    nltk.download('stopwords')
+    readDataSet = pd.read_csv("../dataset/sms+spam+collection/SMSSpamCollection", sep='\t', header=None)
+    print("\n========== Original Dataset Sample ==========")
+    print(readDataSet.head(5))
+    readDataSet['cleaned']= readDataSet[1].apply(clean_text)
+    print('Data after cleaning')
+    print(readDataSet.head(5))
 
