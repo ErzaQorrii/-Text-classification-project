@@ -6,7 +6,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.metrics import classification_report
 import pickle
 from sklearn.naive_bayes import MultinomialNB
-from src.preprocess import readDataSet
+from preprocess import readDataSet
 import matplotlib.pyplot as plt
 import seaborn as sns
 
@@ -67,6 +67,7 @@ visualize_confusion_matrix(model2,"Naive Bayes")
 print("Comparing Logistic Regression and Naive Bayes Models")
 acc1=accuracy_score(y_test, y_pred1)
 acc2=accuracy_score(y_test, y_pred2)
+
 if(acc2>acc1):
     print("Naive Bayes is better")
 else:
